@@ -158,7 +158,7 @@ class GenericMeta(type): pass
 class MetaIterableWrapper(MetaIterable, GenericMeta): pass
 
 
-class Iterable(TorchIterable, _DatasetBase, metaclass=MetaIterableWrapper):
+class Iterable(TorchIterable, _DatasetBase):
     r"""`torch.utils.data.IterableDataset` **dataset with extended capabilities**.
 
     This class inherits from
@@ -234,7 +234,7 @@ class Iterable(TorchIterable, _DatasetBase, metaclass=MetaIterableWrapper):
 class MetaDatasetWrapper(MetaDataset, GenericMeta): pass
 
 
-class Dataset(TorchDataset, _DatasetBase, metaclass=MetaDatasetWrapper):
+class Dataset(TorchDataset, _DatasetBase):
     r"""`torch.utils.data.Dataset` **with extended capabilities.**
 
     This class inherits from
