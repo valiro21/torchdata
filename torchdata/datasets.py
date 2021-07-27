@@ -153,6 +153,7 @@ class _DatasetBase(Base):
         )
         return self._chain_object((self, other))
 
+class GenericMeta(type): pass
     
 class MetaIterableWrapper(MetaIterable, GenericMeta): pass
 
@@ -229,8 +230,6 @@ class Iterable(TorchIterable, _DatasetBase, metaclass=MetaIterableWrapper):
         self._which.append(len(self._maps))
         self._filters.append(predicate)
         return self
-
-class GenericMeta(type): pass
 
 class MetaDatasetWrapper(MetaDataset, GenericMeta): pass
 
