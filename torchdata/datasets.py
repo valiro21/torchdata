@@ -230,6 +230,7 @@ class Iterable(TorchIterable, _DatasetBase, metaclass=MetaIterableWrapper):
         self._filters.append(predicate)
         return self
 
+class GenericMeta(type): pass
 
 class MetaDatasetWrapper(MetaDataset, GenericMeta): pass
 
